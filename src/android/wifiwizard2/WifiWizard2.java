@@ -497,6 +497,8 @@ public class WifiWizard2 extends CordovaPlugin {
         if (status == STATUS_NETWORK_SUGGESTIONS_SUCCESS) {
           wifiManager.saveConfiguration(); // Call saveConfiguration for older < 26 API
           return true;
+        } else {
+          callbackContext.error( "ERROR_ADDING_NETWORK:: ANDROID 10 --> STATUS: ", status);
         }
       }
 
